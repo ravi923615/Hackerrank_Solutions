@@ -17,18 +17,11 @@
 #include <algorithm>
 using namespace std;
 int lonelyinteger(vector < int > a) {
-    if(a.size()==1)
-        return a[0];
-    sort(a.begin(),a.end());
-    for(int i=0;i<a.size()-1;i++)
-        {
-        int x = a[i]^a[i+1];
-        if(x==0)
-            i++;
-        else
-            return a[i];
-    }
-    return a[a.size()-1];
+   int lonelyinteger(vector < int > a) {
+    int retout = 0;
+    for(int i=0;i<a.size();i++)
+        retout = retout^a[i];
+    return retout;
 }
 int main() {
     int res;
